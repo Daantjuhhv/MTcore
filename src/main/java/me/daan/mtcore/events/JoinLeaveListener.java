@@ -14,19 +14,20 @@ public class JoinLeaveListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
         if (p.hasPlayedBefore()) {
-            String message = Mtcore.instance.getConfig().getString("Join-Message").replaceAll("%speler%", p.getName());
+            String message = Mtcore.instance.getConfig().getString("Join-Message").replace("%speler%", p.getName());
             e.setJoinMessage(ChatColor.translateAlternateColorCodes('&', message));
         }
         if (!p.hasPlayedBefore()) {
-            String message2 = Mtcore.instance.getConfig().getString("First-Join").replaceAll("%speler%", p.getName());
+            String message2 = Mtcore.instance.getConfig().getString("First-Join").replace("%speler%", p.getName());
             e.setJoinMessage(ChatColor.translateAlternateColorCodes('&', message2));
+
         }
     }
 
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
         Player p = e.getPlayer();
-        String message = Mtcore.instance.getConfig().getString("Leave-Message").replaceAll("%speler%", p.getName());
+        String message = Mtcore.instance.getConfig().getString("Leave-Message").replace("%speler%", p.getName());
         e.setQuitMessage(ChatColor.translateAlternateColorCodes('&', message));
     }
 }
