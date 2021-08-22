@@ -1,0 +1,9 @@
+name: Mtcore
+version: '${project.version}'
+main: me.daan.mtcore.Mtcore
+
+commands:
+  discord:
+    description: discord command
+  join-info:
+    description: Info over plugin
